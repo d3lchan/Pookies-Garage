@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
@@ -13,15 +13,27 @@ function Home() {
       <section className="mt-8">
         <h2 className="text-2xl font-semibold">Shop By Category</h2>
         <div className="mt-4 flex flex-col gap-4 sm:flex-row">
-          <button className="rounded-xl bg-zinc-800 px-6 py-4 text-left text-lg font-semibold hover:bg-zinc-700">
+          <Link
+            to="/categories/$category"
+            params={{ category: "handling" }}
+            className="rounded-xl bg-zinc-800 px-6 py-4 text-left text-lg font-semibold hover:bg-zinc-700"
+          >
             Handling
-          </button>
-          <button className="rounded-xl bg-zinc-800 px-6 py-4 text-left text-lg font-semibold hover:bg-zinc-700">
+          </Link>
+          <Link
+            to="/categories/$category"
+            params={{ category: "engine" }}
+            className="rounded-xl bg-zinc-800 px-6 py-4 text-left text-lg font-semibold hover:bg-zinc-700"
+          >
             Engine
-          </button>
-          <button className="rounded-xl bg-zinc-800 px-6 py-4 text-left text-lg font-semibold hover:bg-zinc-700">
+          </Link>
+          <Link
+            to="/categories/$category"
+            params={{ category: "drivetrain" }}
+            className="rounded-xl bg-zinc-800 px-6 py-4 text-left text-lg font-semibold hover:bg-zinc-700"
+          >
             Drivetrain
-          </button>
+          </Link>
         </div>
       </section>
     </main>
