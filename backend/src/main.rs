@@ -30,14 +30,17 @@ fn get_parts() -> Json<Vec<Part>> {
         },
         Part {
             id: 1,
-            name:String::from("BMC Air Filter"),
-            category: String::from("Engine"),
+            name:String::from("R1250GS Driveshaft"),
+            category: String::from("Drivetrain"),
             price_cents: 8499,
             in_stock: true,
         },
     ];
     Json(parts)
 }
+
+#[get("/parts/<category>")]
+fn get_parts_by_category(category: &str) -> Json<Vec<Part>
 #[get("/")]
 fn index() -> &'static str{
     "Pookies Garage API"
